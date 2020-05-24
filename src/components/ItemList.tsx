@@ -6,7 +6,7 @@ import ItemCard from './ItemCard'
 class ItemList extends React.Component<any,any>{
     state = {
         items : [
-          { id:1, name:'Asus Tuf Gaming', price:40000, category:'laptop',image:'/images/laptop.jfif'},
+          { id:1, name:'Asus Laptop', price:40000, category:'laptop',image:'/images/laptop.jfif'},
           { id:2, name:'Macbook Air', price:60000, category:'laptop',image:'/images/laptop.jfif'},
           { id:3, name:'Hero Thunderbird', price:4000, category:'bicycle',image:'/images/bicycle.jfif'},
           { id:4, name:'Decathlon BTWX 100', price:5000, category:'bicycle',image:'/images/bicycle.jfif'},
