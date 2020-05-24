@@ -1,20 +1,29 @@
 import React from 'react'
-import {IonItem,IonLabel,IonThumbnail} from '@ionic/react';
+import { IonThumbnail, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonItem, IonIcon, IonLabel, IonButton } from '@ionic/react';
 
-const ItemCard:React.FC = () => {
-    return (
-        <IonItem href="#">
-            <IonLabel>
-            Hero thunderbird
-            <p>Rs.2500</p>
-            <p>Zanskar</p>
-            </IonLabel>
-            <IonThumbnail slot="start">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
-            </IonThumbnail>
-        </IonItem>
-    )
 
+class ItemCard extends React.Component<any,any>{
+
+
+    render(){
+        const {item} = this.props
+        return(
+            <IonCard style={{margin:'0'}}>
+                <img src={item.image} />
+          
+          
+          <IonCardHeader>
+            <IonCardSubtitle>{item.name}</IonCardSubtitle>
+            Rs. {item.price}
+
+
+          </IonCardHeader>
+          
+        </IonCard>
+            
+           
+        )
+    }
 }
 
-export default ItemCard;
+export default ItemCard
