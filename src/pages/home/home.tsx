@@ -10,16 +10,20 @@ import {
     IonIcon,
     IonToolbar,
     IonFabList,
+    IonHeader,
+    IonTitle,
+    IonCol,
+    IonRow,
 } from '@ionic/react';
 import { add, createOutline } from 'ionicons/icons';
 import './home.css';
+import { connect } from 'react-redux';
 import HeaderCard from '../../components/HeaderCard/HeaderCard';
 import ItemList from '../../components/ItemList/ItemList';
+import SearchBar from '../../components/SearchBar/SearchBar';
 // import CategoryCard from '../../components/CategoryCard/CategoryCard';
 
-import { connect } from 'react-redux'
-
-class Home extends React.Component<any,any> {
+class Home extends React.Component<any, any> {
     // eslint-disable-next-line react/destructuring-assignment
     // eslint-disable-next-line react/state-in-constructor
     state = {
@@ -30,6 +34,18 @@ class Home extends React.Component<any,any> {
         return (
             <IonPage>
                 <IonContent>
+                    <IonHeader style={{ padding: 0 }}>
+                        <IonToolbar>
+                            <IonRow>
+                                <IonCol className="title" sizeXs="3" sizeXl="3">
+                                    <IonTitle>Home</IonTitle>
+                                </IonCol>
+                                <IonCol>
+                                    <SearchBar />
+                                </IonCol>
+                            </IonRow>
+                        </IonToolbar>
+                    </IonHeader>
                     <HeaderCard />
 
                     <IonToolbar style={{ marginBottom: '1em' }}>
@@ -57,7 +73,10 @@ class Home extends React.Component<any,any> {
                             </IonSegmentButton>
                         </IonSegment>
                     </IonToolbar>
-                    <ItemList items={this.props.items} category={this.state.category} />
+                    <ItemList
+                        items={this.props.items}
+                        category={this.state.category}
+                    />
                     <IonFab vertical="bottom" horizontal="end" slot="fixed">
                         <IonFabButton href="/postad">
                             <IonIcon icon={add} />
@@ -77,10 +96,10 @@ class Home extends React.Component<any,any> {
     }
 }
 
-const mapStatetoProps = (state: { item: { items: any; }; }) => {
+const mapStatetoProps = (state: { item: { items: any } }) => {
     return {
-        items : state.item.items
-    }
-}
+        items: state.item.items,
+    };
+};
 
 export default connect(mapStatetoProps)(Home);

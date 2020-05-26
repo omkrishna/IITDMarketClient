@@ -7,7 +7,6 @@ import {
     IonButton,
 } from '@ionic/react';
 import './HeaderCard.css';
-import SearchBar from '../SearchBar/SearchBar';
 
 const HeaderCard: React.FC = () => {
     return (
@@ -23,15 +22,16 @@ const HeaderCard: React.FC = () => {
                 Wanna buy, sell, rent items among IIT Delhi peeps? Dont worry,
                 we got you covered !
             </IonCardContent>
-            <SearchBar />
             <IonCardContent>
-                <IonButton class="reg-btn" href="/register">
-                    Sign in to start
-                </IonButton>
+                <div className="wrapper">
+                    <IonButton class="reg-btn" href="/register">
+                        Sign in to start
+                    </IonButton>
 
-                <IonButton class="reg-btn" href="/login">
-                    Login
-                </IonButton>
+                    <IonButton class="reg-btn" href="/login">
+                        Login
+                    </IonButton>
+                </div>
             </IonCardContent>
         </IonCard>
     );

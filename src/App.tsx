@@ -23,8 +23,7 @@ import MyAccount from './pages/myaccount/myaccount';
 /* new imports */
 import RegisterForm from './components/RegisterForm/RegisterForm';
 import Health from './pages/Health/Health';
-import ItemDetail from './components/ItemDetail/ItemDetail'
-
+import ItemDetail from './components/ItemDetail/ItemDetail';
 import PostAd from './components/PostAd/PostAd';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -45,7 +44,6 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-
 const App: React.FC = () => (
     <IonApp>
         <IonReactRouter>
@@ -55,7 +53,7 @@ const App: React.FC = () => (
                     <Route path="/home" component={Home} exact />
                     <Route path="/categories" component={Categories} exact />
                     <Route path="/chats" component={Chats} />
-                    <Route path="/myaccount" component={MyAccount} />
+                    <Route path="/myaccount" component={MyAccount} exact />
                     <Route path="/register" component={RegisterForm} exact />
                     <Route path="/postad" component={PostAd} exact />
                     <Route path="/itemdetail" component={ItemDetail} exact />
