@@ -1,32 +1,16 @@
-import React from "react";
-import {
-  IonContent,
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonButtons,
-  IonBackButton,
-  IonTitle,
-} from "@ionic/react";
-import CategoryCard from "../../components/CategoryCard/CategoryCard";
-import { RouteComponentProps } from "react-router";
+import React from 'react';
+import { IonContent, IonPage } from '@ionic/react';
+import CategoryCard from '../../components/CategoryCard/CategoryCard';
+import { RouteComponentProps } from 'react-router';
 
 const categories: React.FC<RouteComponentProps> = (props) => {
-  return (
-    <IonPage>
-      <IonHeader style={{ padding: 0 }}>
-        <IonToolbar>
-          <IonButtons slot="start">
-            <IonBackButton defaultHref="/" />
-          </IonButtons>
-          <IonTitle>Categories</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <CategoryCard />
-      </IonContent>
-    </IonPage>
-  );
+    return (
+        <IonPage>
+            <IonContent>
+                <CategoryCard />
+            </IonContent>
+        </IonPage>
+    );
 };
 
 export default categories;
